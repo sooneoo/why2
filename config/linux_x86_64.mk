@@ -16,7 +16,7 @@ LIBS += $$(pkg-config --libs $(PKGS))
 OBJS = $(CACHE)/main.o
 
 
-$(CACHE)/main.o: src/why2/main.c
+$(CACHE)/main.o: src/why2/main.c src/why2/version.h
 	$(CC) $(CFLAGS) -c src/why2/main.c -o $@
 
 
