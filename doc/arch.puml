@@ -13,6 +13,7 @@ object GameState_Pause
 object GameState_Options
 object GameState_GameControl
 object GameState_GameOver
+object GameState_Info
 
 object GameManager {
     GameManager_Context context
@@ -42,12 +43,15 @@ GameManager_Context <|-- GameState_Pause
 GameManager_Context <|-- GameState_Options
 GameManager_Context <|-- GameState_GameControl
 GameManager_Context <|-- GameState_GameOver
+GameManager_Context <|-- GameState_Info
 
 GameState_Menu <|-- GameState
 GameState_Pause <|-- GameState
 GameState_Options <|-- GameState
 GameState_GameControl <|-- GameState
 GameState_GameOver <|-- GameState
+GameState_Info <|-- GameState
+
 
 Menu <|-- Object
 Menu <|-- Button
