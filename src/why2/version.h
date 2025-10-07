@@ -11,7 +11,7 @@ typedef struct {
 
 #define why2_version() (Why2_Version) {     \
     .major = 0                              \
-    , .minor = 2                            \
+    , .minor = 3                            \
     , .patch = 0                            \
 }
 
