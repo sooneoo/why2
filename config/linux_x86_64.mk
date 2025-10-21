@@ -13,11 +13,27 @@ LIBS += -lalloc
 LIBS += $$(pkg-config --libs $(PKGS))
 
 
-OBJS = $(CACHE)/main.o
+OBJS += $(CACHE)/main.o
+OBJS += $(CACHE)/game_manager.o
+OBJS += $(CACHE)/game_state_menu.o
+OBJS += $(CACHE)/menu_button.o
 
 
 $(CACHE)/main.o: src/why2/main.c src/why2/version.h
 	$(CC) $(CFLAGS) -c src/why2/main.c -o $@
+
+
+$(CACHE)/game_manager.o: src/why2/game_manager.c src/why2/version.h
+	$(CC) $(CFLAGS) -c src/why2/game_manager.c -o $@
+
+
+$(CACHE)/menu_button.o: src/why2/menu_button.c src/why2/version.h
+	$(CC) $(CFLAGS) -c src/why2/menu_button.c -o $@
+
+
+
+$(CACHE)/game_state_menu.o: src/why2/game_state_menu.c src/why2/version.h
+	$(CC) $(CFLAGS) -c src/why2/game_state_menu.c -o $@
 
 
 $(RELEASE)/$(TARGET): $(OBJS)
